@@ -1,5 +1,5 @@
-﻿<!-- title: 문의하기 | 브랜딩스파크 -->
-<!-- desc: 크리에이터 지원, 브랜드 제휴, 플랫폼 입점, 홈페이지·쇼핑몰 제작 문의. 영업일 기준 24시간 내 답변. -->
+<!-- title: 문의하기 | 브랜딩스파크 -->
+<!-- desc: 공급사 입점, 셀러·크리에이터 입점, 브랜드 제휴·광고, 홈페이지·쇼핑몰·시스템 제작 문의. 영업일 기준 24시간 내 답변. -->
 <!-- active: contact -->
 <!-- bodyclass: dark-top -->
 <section class="contact" style="padding-top:170px">
@@ -7,7 +7,7 @@
     <div class="cinfo">
       <span class="eyebrow rv">Contact</span>
       <h2 class="sec rv">시작해 <span class="hl">볼까요?</span></h2>
-      <p class="lead rv">크리에이터 지원, 브랜드 제휴, 플랫폼 입점, 홈페이지·쇼핑몰 제작 — 무엇이든 환영합니다. 영업일 기준 24시간 내에 답변드립니다.</p>
+      <p class="lead rv">공급사 입점, 셀러·크리에이터 입점, 브랜드 제휴·광고, 홈페이지·쇼핑몰·시스템 제작 — 무엇이든 환영합니다. 영업일 기준 24시간 내에 답변드립니다.</p>
       <div class="cline rv">
         <div><svg class="ic"><use href="#i-mail"/></svg>info@bspark.co.kr</div>
         <div><svg class="ic"><use href="#i-phone"/></svg>010-8660-3293 · Fax 02-3477-3293</div>
@@ -15,26 +15,58 @@
         <div><svg class="ic"><use href="#i-clock"/></svg>평일 09:00 – 18:00 (주말·공휴일 휴무)</div>
       </div>
     </div>
-    <form class="form rv" id="cform">
+    <form class="form rv" id="cform" novalidate>
       <h3>문의하기</h3>
-      <div class="frow">
-        <div class="fg"><label>이름 / 채널명 · 회사명 *</label><input name="name" required placeholder="홍길동 / 채널명"></div>
-        <div class="fg"><label>연락처 *</label><input name="phone" required placeholder="010-0000-0000"></div>
-      </div>
-      <div class="frow">
-        <div class="fg"><label>이메일 *</label><input type="email" name="email" required placeholder="you@example.com"></div>
-        <div class="fg"><label>문의 유형 *</label>
-          <select name="type" id="ftype" required>
-            <option value="">선택해 주세요</option>
-            <option>크리에이터 지원</option>
-            <option>브랜드 제휴</option>
-            <option>플랫폼 입점 (제조사·자사브랜드)</option>
-            <option>홈페이지 · 쇼핑몰 · 시스템 제작</option>
-            <option>기타</option>
-          </select>
+      <div class="fg"><label>문의 유형 *</label>
+        <div class="kinds" id="kinds">
+          <button type="button" data-kind="공급사">공급사 입점</button>
+          <button type="button" data-kind="셀러">셀러 · 크리에이터</button>
+          <button type="button" data-kind="제휴">브랜드 제휴 · 광고</button>
+          <button type="button" data-kind="제작">홈페이지 · 시스템 제작</button>
+          <button type="button" data-kind="기타">기타</button>
         </div>
       </div>
-      <div class="fg"><label>문의 내용 *</label><textarea name="message" required placeholder="채널 링크, 브랜드·상품 소개, 또는 만들고 싶은 사이트에 대해 편하게 남겨주세요."></textarea></div>
+      <p class="khelp" id="khelp"></p>
+
+      <div class="fg only-공급사"><label>문의 유형 *</label>
+        <select id="topicSupplier"><option>입점 문의</option><option>광고 문의</option><option>기타 문의</option></select>
+      </div>
+      <div class="fg only-제휴"><label>문의 유형 *</label>
+        <select id="topicPartner"><option>제휴 문의</option><option>광고 문의</option></select>
+      </div>
+      <div class="fg only-제작"><label>제작 종류 *</label>
+        <select id="topicBuild"><option>홈페이지 제작</option><option>쇼핑몰 · 판매페이지 제작</option><option>업무 시스템 제작</option><option>기타 제작</option></select>
+      </div>
+
+      <div class="frow">
+        <div class="fg"><label id="lblCompany">업체명(상호) *</label><input name="company" id="company" required placeholder="(주)브랜딩스파크"></div>
+        <div class="fg not-셀러"><label>담당자명</label><input name="contactName" id="contactName" placeholder="홍길동"></div>
+      </div>
+
+      <div class="fg only-셀러"><label>활동 채널 (복수 선택)</label>
+        <div class="chips" id="sns">
+          <button type="button">유튜브</button><button type="button">틱톡</button><button type="button">인스타</button><button type="button">블로그</button><button type="button">카페</button><button type="button">기타</button>
+        </div>
+      </div>
+      <div class="fg only-셀러"><label>채널 링크</label><input id="snsLink" placeholder="https://youtube.com/@... (대표 채널 주소)"></div>
+      <div class="fg only-제작"><label>참고 사이트 (선택)</label><input id="refUrl" placeholder="https://참고하고 싶은 사이트 주소"></div>
+
+      <div class="fg only-공급사"><label>상품 · 회사 제안서 * (여러 개 가능)</label>
+        <label class="drop" id="drop">
+          <span class="dropicon"><svg class="ic"><use href="#i-file"/></svg></span>
+          <span><b>파일을 끌어다 놓거나</b> 클릭해서 선택</span>
+          <small>회사소개서·제안서 1개 이상 필수 · PDF·PPT·Word·Excel·한글·ZIP (각 20MB, 최대 10개)</small>
+          <input type="file" id="files" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.hwp,.hwpx,.zip,.jpg,.jpeg,.png,.gif,.txt" hidden>
+        </label>
+        <div class="filelist" id="filelist"></div>
+      </div>
+
+      <div class="frow">
+        <div class="fg"><label>연락처 *</label><input name="phone" id="phone" required placeholder="010-0000-0000"></div>
+        <div class="fg"><label>이메일 *</label><input type="email" name="email" id="email" required placeholder="you@example.com"></div>
+      </div>
+      <div class="fg"><label>문의 내용</label><textarea name="message" id="message"></textarea></div>
+      <input type="text" name="website" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <label class="agree"><input type="checkbox" id="fagree" required><span><a onclick="openPP(event)">개인정보 수집·이용</a>에 동의합니다. (문의 응대 목적, 목적 달성 시 파기)</span></label>
       <button class="btn pri" type="submit" id="fbtn">문의 보내기 <svg class="ic"><use href="#i-arrow"/></svg></button>
       <p class="fmsg" id="fmsg"></p>

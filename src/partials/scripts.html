@@ -54,6 +54,14 @@ addEventListener('click', e => {
   }
 });
 
+// brand film sound toggle (about.html)
+const film = document.getElementById('brandfilm'), sndbtn = document.getElementById('sndbtn');
+if (film && sndbtn) {
+  const setLabel = () => { sndbtn.innerHTML = film.muted ? '<svg class="ic"><use href="#i-vol"/></svg><span>소리 켜기</span>' : '<svg class="ic"><use href="#i-mute"/></svg><span>소리 끄기</span>'; };
+  sndbtn.addEventListener('click', () => { film.muted = !film.muted; if (!film.muted) { film.currentTime = 0; film.play().catch(()=>{}); } setLabel(); });
+  setLabel();
+}
+
 // privacy modal
 const pp = document.getElementById('ppModal');
 function openPP(e){ if(e) e.preventDefault(); pp.classList.add('on'); }
@@ -167,3 +175,4 @@ if (cform) {
 </script>
 </body>
 </html>
+

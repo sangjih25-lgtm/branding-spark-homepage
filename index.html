@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>브랜딩스파크 | 커머스 기반 크리에이터 컴퍼니</title>
+<meta name="description" content="브랜딩스파크(주)는 자체 커머스 인프라 위에서 크리에이터와 브랜드를 연결하는 MCN 회사입니다.">
+<meta property="og:title" content="브랜딩스파크 | 콘텐츠를 진짜 매출로">
+<meta property="og:description" content="자체 커머스 인프라 위에서 크리에이터와 브랜드를 연결하는 크리에이터 커머스 컴퍼니">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://branding-spark.com">
+<meta property="og:image" content="https://branding-spark.com/images/logo.png">
+<link rel="canonical" href="https://branding-spark.com">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --blue:#2b46f5; --blue-d:#1c2fc4; --volt:#e8ff3a; --pink:#ff5ca8;
+  --ink:#0d0e14; --paper:#f4f2ec; --sub:#565b6e; --line:#0d0e14;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;word-break:keep-all;overflow-x:hidden;cursor:none}
+img{max-width:100%;display:block}
+a,button,input,select,textarea,label{cursor:none}
+@media(pointer:coarse){body,a,button,input,select,textarea,label{cursor:auto}}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;opacity:.05;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140"><filter id="n"><feTurbulence baseFrequency=".8" numOctaves="2"/></filter><rect width="140" height="140" filter="url(%23n)"/></svg>')}
+
+/* custom cursor */
+#cur{position:fixed;width:16px;height:16px;border-radius:50%;background:var(--blue);z-index:400;pointer-events:none;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s;mix-blend-mode:multiply}
+#cur.big{width:56px;height:56px;background:var(--volt);mix-blend-mode:normal;opacity:.85}
+@media(pointer:coarse){#cur{display:none}}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:.25s;background:transparent}
+nav.on{background:#f4f2ecee;backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+nav .logo img{height:25px}
+nav ul{display:flex;gap:4px;list-style:none;align-items:center}
+nav ul a{font-size:14.5px;font-weight:700;padding:9px 16px;border-radius:99px;transition:.15s;color:var(--ink)}
+nav ul a:hover{background:var(--ink);color:var(--volt)}
+nav .cta{background:var(--ink);color:#fff!important;border-radius:99px;margin-left:8px}
+nav .cta:hover{background:var(--blue)!important;color:#fff!important}
+nav .burger{display:none;background:none;border:0;padding:6px;z-index:210}
+nav .burger span{display:block;width:22px;height:2.5px;background:var(--ink);margin:5px 0}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;position:relative;overflow:hidden}
+.hero .big{font-size:clamp(44px,9.2vw,118px);font-weight:800;line-height:1.02;letter-spacing:-.04em;text-transform:uppercase}
+.hero .big .row{display:flex;align-items:center;gap:2.5vw;flex-wrap:wrap}
+.hero .big .outline{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+.hero .big .chip{display:inline-flex;align-items:center;background:var(--blue);color:#fff;border-radius:99px;padding:.04em .35em .1em;transform:rotate(-2.5deg);box-shadow:5px 5px 0 var(--ink)}
+.hero .big .flip{display:inline-block;position:relative;color:var(--blue);min-width:4.2em}
+.hero .big .flip span{position:absolute;left:0;top:0;opacity:0;transform:translateY(30%) rotate(3deg);transition:.45s cubic-bezier(.2,.8,.2,1);white-space:nowrap}
+.hero .big .flip span.on{opacity:1;transform:none;position:relative}
+.hero .bolt{position:absolute;font-size:clamp(120px,22vw,300px);right:-1%;top:10%;transform:rotate(14deg);opacity:.9;filter:drop-shadow(8px 10px 0 var(--ink));animation:bob 5s ease-in-out infinite;user-select:none;z-index:-1}
+@keyframes bob{50%{transform:rotate(10deg) translateY(-16px)}}
+.hero .sub{margin-top:34px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.hero .sub p{font-size:clamp(15px,1.7vw,18px);color:var(--sub);max-width:520px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:15px 28px;border-radius:99px;border:2.5px solid var(--ink);transition:.15s;background:#fff;color:var(--ink);text-decoration:none}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.pri{background:var(--volt)}
+.btn.blue{background:var(--blue);color:#fff}
+.hero .tick{margin-top:70px}
+
+/* marquee */
+.mq{overflow:hidden;background:var(--ink);color:var(--volt);padding:14px 0;transform:rotate(-1.2deg) scale(1.02);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
+.mq.rev{background:var(--volt);color:var(--ink);transform:rotate(1.2deg) scale(1.02)}
+.mq .in{display:flex;gap:44px;white-space:nowrap;font-weight:800;font-size:17px;letter-spacing:.06em;text-transform:uppercase;animation:mq 22s linear infinite;width:max-content}
+.mq.rev .in{animation-direction:reverse}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* section titles */
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--volt);padding:7px 16px;border-radius:99px;margin-bottom:20px;transform:rotate(-1.5deg)}
+h2.sec{font-size:clamp(30px,4.8vw,52px);font-weight:800;line-height:1.16;letter-spacing:-.03em}
+h2.sec .hl{color:var(--blue)}
+h2.sec .circ{position:relative;white-space:nowrap}
+h2.sec .circ svg{position:absolute;inset:-14% -6%;width:112%;height:128%;overflow:visible}
+p.lead{margin-top:18px;font-size:17px;color:var(--sub);max-width:620px}
+
+/* sticker cards */
+.stickers{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:60px}
+.stk{background:#fff;border:2.5px solid var(--ink);border-radius:18px;padding:30px 24px;box-shadow:6px 6px 0 var(--ink);transition:.2s}
+.stk:nth-child(odd){transform:rotate(-1.6deg)}
+.stk:nth-child(even){transform:rotate(1.4deg)}
+.stk:hover{transform:rotate(0) translateY(-6px);box-shadow:9px 9px 0 var(--blue)}
+.stk .ico{width:52px;height:52px;border-radius:50%;border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;background:var(--volt)}
+.stk:nth-child(2) .ico{background:#cfe0ff}.stk:nth-child(3) .ico{background:#ffd7ea}.stk:nth-child(4) .ico{background:#d4ffd9}
+.stk h3{font-size:18px;font-weight:800;margin-bottom:8px}
+.stk p{font-size:14.5px;color:var(--sub)}
+
+/* business rows */
+.biz{margin-top:60px;border-top:2.5px solid var(--ink)}
+.brow{display:grid;grid-template-columns:170px 1fr 1.3fr;gap:26px;padding:38px 10px;border-bottom:2.5px solid var(--ink);align-items:center;transition:.2s;position:relative}
+.brow .num{font-size:clamp(40px,6vw,68px);font-weight:800;color:transparent;-webkit-text-stroke:2px var(--ink);line-height:1;transition:.2s}
+.brow h3{font-size:clamp(19px,2.4vw,24px);font-weight:800}
+.brow p{font-size:15px;color:var(--sub)}
+.brow:hover{background:#fff}
+.brow:hover .num{color:var(--blue);-webkit-text-stroke:2px var(--blue)}
+
+/* partners */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:60px}
+.panel{border:2.5px solid var(--ink);border-radius:22px;padding:44px 38px;position:relative;box-shadow:8px 8px 0 var(--ink);background:#fff}
+.panel.crt{background:var(--blue);color:#fff;transform:rotate(-.8deg)}
+.panel.brd{background:#fff;transform:rotate(.8deg)}
+.panel .pe{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;padding:6px 14px;border-radius:99px;margin-bottom:18px;border:2px solid currentColor}
+.panel h3{font-size:clamp(21px,2.6vw,26px);font-weight:800;line-height:1.3;margin-bottom:22px}
+.panel ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:32px}
+.panel li{display:flex;gap:11px;font-size:15px;align-items:flex-start}
+.panel.crt li{color:#dfe5ff}
+.panel.brd li{color:var(--sub)}
+.panel li::before{content:"⚡";flex:0 0 auto}
+.panel.crt .btn{background:var(--volt);border-color:var(--ink);color:var(--ink)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;counter-reset:st}
+.step{border:2.5px solid var(--ink);padding:30px 24px;background:#fff;position:relative;margin-left:-2.5px}
+.step:first-child{border-radius:18px 0 0 18px;margin-left:0}
+.step:last-child{border-radius:0 18px 18px 0}
+.step::before{counter-increment:st;content:"0" counter(st);display:inline-block;font-size:14px;font-weight:800;background:var(--ink);color:var(--volt);padding:4px 12px;border-radius:99px;margin-bottom:16px}
+.step:hover{background:var(--volt)}
+.step h4{font-size:16.5px;font-weight:800;margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--sub)}
+.step:hover p{color:#3a3d22}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper);border-top:2.5px solid var(--ink)}
+.contact .eyebrow{background:var(--volt);color:var(--ink)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;align-items:start}
+.contact h2.sec .hl{color:var(--volt)}
+.contact p.lead{color:#9aa0b8}
+.contact .cline{display:flex;flex-direction:column;gap:14px;margin-top:36px;font-size:15px;color:#c9cdde}
+.contact .cline b{color:var(--volt);font-weight:800;margin-right:10px;display:inline-block;min-width:52px}
+.form{background:var(--paper);color:var(--ink);border-radius:22px;padding:38px;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--blue)}
+.form h3{font-size:20px;font-weight:800;margin-bottom:22px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;border:2px solid var(--ink);border-radius:12px;padding:12px 14px;font-size:14.5px;font-family:inherit;background:#fff;transition:.15s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;box-shadow:3px 3px 0 var(--blue)}
+.fg textarea{resize:vertical;min-height:110px}
+.agree{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--sub);margin:6px 0 18px}
+.agree input{margin-top:3px;accent-color:var(--blue)}
+.agree a{color:var(--blue);font-weight:700;text-decoration:underline}
+.form .btn{width:100%;justify-content:center}
+.fmsg{margin-top:12px;font-size:14px;font-weight:700;display:none;text-align:center}
+
+/* footer */
+footer{background:var(--ink);color:#8b8fa5;padding:20px 0 44px;font-size:13.5px}
+footer .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center;padding:26px 0;border-top:2px solid #ffffff22;border-bottom:2px solid #ffffff22;margin-bottom:24px}
+footer img{height:22px}
+footer .links{display:flex;gap:22px}
+footer .links a{color:#c9cdde;font-weight:700;text-decoration:none}
+footer .links a:hover{color:var(--volt)}
+footer p{line-height:1.9}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(13,14,20,.7);z-index:500;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.on{display:flex}
+.modal .box{background:var(--paper);color:var(--ink);max-width:640px;width:100%;max-height:80vh;overflow-y:auto;border-radius:18px;padding:36px;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--volt)}
+.modal h3{font-size:19px;font-weight:800;margin-bottom:16px}
+.modal h4{font-size:15px;font-weight:800;margin:18px 0 6px}
+.modal p{font-size:13.5px;color:var(--sub)}
+.modal .close{margin-top:24px;width:100%}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+
+/* ── 디테일 업그레이드 ── */
+::selection{background:var(--volt);color:var(--ink)}
+#prog{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--volt));width:0;z-index:450;border-radius:0 4px 4px 0}
+
+/* nav 허브 드롭다운 */
+.hubdd{position:relative}
+.hubdd>a{display:inline-flex;align-items:center;gap:6px}
+.hubdd .dd{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border:2.5px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:8px;min-width:210px;display:none;z-index:120}
+.hubdd:hover .dd,.hubdd .dd:hover{display:block}
+.hubdd .dd a{display:flex;flex-direction:column;gap:2px;padding:11px 14px;border-radius:9px;font-size:14px}
+.hubdd .dd a small{font-size:11.5px;font-weight:600;color:var(--sub)}
+.hubdd .dd a:hover{background:var(--volt);color:var(--ink)}
+.hubdd .dd a:hover small{color:#3a3d22}
+
+/* hero scroll indicator */
+.scrolldn{position:absolute;left:50%;bottom:86px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.2em;color:var(--sub);z-index:5}
+.scrolldn i{width:2.5px;height:34px;background:var(--ink);border-radius:2px;position:relative;overflow:hidden;font-style:normal}
+.scrolldn i::after{content:"";position:absolute;left:0;top:-50%;width:100%;height:50%;background:var(--volt);animation:drip 1.6s ease-in infinite}
+@keyframes drip{to{top:110%}}
+
+/* business row hover emoji */
+.brow .bemo{position:absolute;right:26px;top:50%;transform:translateY(-50%) rotate(10deg) scale(.4);font-size:54px;opacity:0;transition:.25s;pointer-events:none}
+.brow:hover .bemo{opacity:1;transform:translateY(-50%) rotate(-6deg) scale(1)}
+
+/* 파트너 포탈 (허브 연결) */
+.portal{background:var(--blue);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);color:#fff;position:relative;overflow:hidden}
+.portal::before{content:"⚡";position:absolute;font-size:340px;right:-60px;bottom:-120px;opacity:.12;transform:rotate(14deg)}
+.portal .eyebrow{background:var(--volt);color:var(--ink)}
+.portal h2.sec .hl{color:var(--volt)}
+.portal p.lead{color:#d5dbff}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px;position:relative;z-index:2}
+.ticket{background:var(--paper);color:var(--ink);border:2.5px solid var(--ink);border-radius:20px;padding:36px 34px;position:relative;box-shadow:7px 7px 0 var(--ink);transition:.2s;display:block;text-decoration:none}
+.ticket:hover{transform:translate(-3px,-5px);box-shadow:11px 12px 0 var(--ink)}
+.ticket::before,.ticket::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--blue);border:2.5px solid var(--ink);top:50%;transform:translateY(-50%)}
+.ticket::before{left:-16px}.ticket::after{right:-16px}
+.ticket .tt{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+.ticket .tt b{font-size:22px;font-weight:800}
+.ticket .tt span{font-size:26px}
+.ticket p{font-size:14.5px;color:var(--sub);margin-bottom:20px;min-height:44px}
+.ticket .go{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14.5px;background:var(--ink);color:var(--volt);padding:11px 22px;border-radius:99px}
+.ticket:hover .go{background:var(--blue);color:#fff}
+.portal .note{margin-top:26px;font-size:13.5px;color:#c6cdf7;position:relative;z-index:2}
+.portal .note a{color:var(--volt);font-weight:800}
+
+/* FAQ */
+.faq{margin-top:56px;border-top:2.5px solid var(--ink)}
+.qa{border-bottom:2.5px solid var(--ink)}
+.qa summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 8px;font-size:clamp(16px,2vw,19px);font-weight:800;transition:.15s}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{background:#fff;padding-left:16px}
+.qa summary .pm{flex:0 0 34px;height:34px;border:2.5px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;background:#fff;transition:.2s}
+.qa[open] summary .pm{background:var(--volt);transform:rotate(45deg)}
+.qa .ans{padding:0 8px 26px;font-size:15px;color:var(--sub);max-width:760px}
+
+/* back to top */
+#totop{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;background:var(--volt);border:2.5px solid var(--ink);font-size:22px;z-index:150;opacity:0;pointer-events:none;transition:.25s;box-shadow:4px 4px 0 var(--ink);display:flex;align-items:center;justify-content:center}
+#totop.on{opacity:1;pointer-events:auto}
+#totop:hover{transform:translateY(-4px)}
+
+/* click spark burst */
+.spark{position:fixed;z-index:420;pointer-events:none;font-size:15px;animation:sp .65s ease-out forwards}
+@keyframes sp{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(.2);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .mq .in,.hero .bolt,.scrolldn i::after{animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+}
+
+@media(max-width:920px){
+  section{padding:76px 0}
+  .stickers{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{margin-left:0;margin-top:-2.5px;border-radius:0!important}
+  .step:first-child{border-radius:18px 18px 0 0!important;margin-top:0}
+  .step:last-child{border-radius:0 0 18px 18px!important}
+  .brow{grid-template-columns:1fr;gap:8px;padding:30px 6px}
+  .contact .wrap{grid-template-columns:1fr;gap:48px}
+  nav ul{position:fixed;top:0;right:-290px;width:270px;height:100vh;background:var(--paper);border-left:2.5px solid var(--ink);flex-direction:column;align-items:flex-start;padding:90px 26px;gap:14px;transition:.3s}
+  nav ul.open{right:0}
+  nav .burger{display:block}
+  .hubdd .dd{position:static;display:block;border:none;box-shadow:none;padding:0 0 0 12px;min-width:0;background:transparent}
+  .pgrid{grid-template-columns:1fr}
+  .ticket::before,.ticket::after{display:none}
+  .brow .bemo{display:none}
+  .scrolldn{display:none}
+}
+@media(max-width:560px){
+  .stickers,.steps{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+  .hero .bolt{opacity:.35}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="images/logo.png" alt="브랜딩스파크"></a>
+    <button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <ul id="menu">
+      <li><a href="#about">회사소개</a></li>
+      <li><a href="#business">사업영역</a></li>
+      <li><a href="#creators">크리에이터</a></li>
+      <li><a href="#brands">브랜드</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li class="hubdd"><a href="#portal">HUB 로그인 ▾</a>
+        <div class="dd">
+          <a href="https://hub.bspark.co.kr/login/seller" target="_blank" rel="noopener">셀러 포탈<small>판매 · 주문 · 정산 관리</small></a>
+          <a href="https://hub.bspark.co.kr/login" target="_blank" rel="noopener">공급사 포탈<small>상품 · 발주 · 정산 관리</small></a>
+        </div>
+      </li>
+      <li><a class="cta" href="#contact">제휴 문의 ⚡</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bolt">⚡</div>
+  <div class="wrap">
+    <h1 class="big">
+      <span class="row">콘텐츠를</span>
+      <span class="row"><span class="chip">진짜 매출</span><span class="outline">로 만드는</span></span>
+      <span class="row"><span class="flip" id="flip"><span class="on">크리에이터</span><span>커머스</span><span>브랜딩</span><span>스파크</span></span>컴퍼니</span>
+    </h1>
+    <div class="sub">
+      <p>브랜딩스파크는 자체 커머스 인프라 위에서 크리에이터와 브랜드를 연결합니다.
+      조회수에서 끝나는 콘텐츠가 아니라, 상품 소싱부터 판매·정산까지 이어지는 수익 구조를 함께 만듭니다.</p>
+      <div class="btns">
+        <a class="btn pri" href="#creators" data-big>크리에이터 지원 →</a>
+        <a class="btn blue" href="#brands" data-big>브랜드 제휴 →</a>
+      </div>
+    </div>
+  </div>
+  <div class="scrolldn">SCROLL<i></i></div>
+  <div class="tick">
+    <div class="mq"><div class="in" id="mq1"></div></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow rv">Why Brandingspark</span>
+    <h2 class="sec rv">숫자를 부풀리는 MCN 말고,<br><span class="circ">인프라<svg viewBox="0 0 120 60" preserveAspectRatio="none"><ellipse cx="60" cy="30" rx="57" ry="26" fill="none" stroke="#2b46f5" stroke-width="3.5"/></svg></span>를 가진 <span class="hl">커머스 파트너</span></h2>
+    <p class="lead rv">대부분의 MCN은 광고를 따오는 데서 멈춥니다. 브랜딩스파크는 이미 커머스 플랫폼을 직접 만들어 운영해 온 회사입니다.
+    크리에이터의 영향력이 지속 가능한 사업이 되도록, 판매의 전 과정을 실제 시스템으로 뒷받침합니다.</p>
+    <div class="stickers">
+      <div class="stk rv"><div class="ico">🛠️</div><h3>직접 만든 플랫폼</h3><p>외주가 아닌 자체 개발 커머스 허브를 운영합니다. 상품 등록부터 주문·정산까지 전 과정이 시스템으로 돌아갑니다.</p></div>
+      <div class="stk rv"><div class="ico">🤝</div><h3>제조사 직계약 원칙</h3><p>중간 벤더를 끼지 않고 제조사·자사브랜드와만 계약합니다. 마진 구조가 깨끗해야 크리에이터 몫이 커집니다.</p></div>
+      <div class="stk rv"><div class="ico">📊</div><h3>투명한 정산</h3><p>정산은 1원 단위 대사가 원칙입니다. 오차는 그냥 넘어가지 않고 원인을 추적하는 것이 회사 규칙입니다.</p></div>
+      <div class="stk rv"><div class="ico">🎨</div><h3>제작 역량 내재화</h3><p>상세페이지·배너·브랜드 디자인을 자체 제작합니다. 콘텐츠와 커머스 소재가 한 팀에서 나옵니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="mq rev"><div class="in" id="mq2"></div></div>
+
+<section id="business">
+  <div class="wrap">
+    <span class="eyebrow rv">Business</span>
+    <h2 class="sec rv">사업영역</h2>
+    <p class="lead rv">크리에이터의 성장 단계에 맞춰, 콘텐츠에서 커머스까지 네 가지 축으로 함께합니다.</p>
+    <div class="biz rv">
+      <div class="brow"><span class="num">01</span><h3>크리에이터 매니지먼트</h3><p>채널 성장 전략, 콘텐츠 기획, 브랜딩, 일정·커뮤니케이션 관리까지. 크리에이터는 콘텐츠에만 집중할 수 있도록 나머지를 맡습니다.</p><span class="bemo">🎬</span></div>
+      <div class="brow"><span class="num">02</span><h3>커머스 연계 수익화</h3><p>공동구매·위탁판매·자체 굿즈까지, 자체 플랫폼과 공급사 네트워크로 크리에이터 커머스를 설계합니다. 재고 부담 없이 시작합니다.</p><span class="bemo">🛒</span></div>
+      <div class="brow"><span class="num">03</span><h3>브랜드 파트너십</h3><p>브랜드 캠페인, 협찬, 콘텐츠 광고를 크리에이터와 매칭합니다. 단발 광고가 아닌 판매 데이터로 이어지는 캠페인을 지향합니다.</p><span class="bemo">🤝</span></div>
+      <div class="brow"><span class="num">04</span><h3>콘텐츠 · 디자인 제작</h3><p>상세페이지, 채널 아트, 썸네일, 브랜드 디자인을 자체 제작합니다. 커머스 전환을 아는 디자인으로 콘텐츠의 완성도를 높입니다.</p><span class="bemo">🎨</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="creators" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv">Partners</span>
+    <h2 class="sec rv">함께 성장할 <span class="hl">파트너</span>를 찾습니다</h2>
+    <div class="split">
+      <div class="panel crt rv">
+        <span class="pe">For Creators</span>
+        <h3>크리에이터님,<br>영향력을 사업으로 바꿔드립니다</h3>
+        <ul>
+          <li>구독자 수보다 성장 가능성과 진정성을 봅니다 — 초기 크리에이터 환영</li>
+          <li>상품 소싱 · 판매 페이지 · 주문 처리 · 배송 연동까지 회사가 대행</li>
+          <li>정산 내역을 투명하게 공개하는 자동 정산 시스템</li>
+          <li>채널 브랜딩 · 썸네일 · 상세페이지 디자인 지원</li>
+          <li>불공정 전속 계약 없음 — 조건은 계약 전에 전부 서면으로</li>
+        </ul>
+        <a class="btn" href="#contact" data-type="크리에이터 지원" data-big>크리에이터 지원하기 →</a>
+      </div>
+      <div class="panel brd rv" id="brands">
+        <span class="pe">For Brands</span>
+        <h3>브랜드님,<br>노출이 아니라 판매로 증명합니다</h3>
+        <ul>
+          <li>브랜드 결에 맞는 크리에이터 매칭과 캠페인 기획</li>
+          <li>콘텐츠 협찬을 공동구매 · 입점 판매로 연결하는 커머스 설계</li>
+          <li>자체 플랫폼 입점으로 지속 판매 채널 확보 (제조사 · 자사브랜드)</li>
+          <li>캠페인 소재(상세페이지 · 배너) 제작까지 원스톱</li>
+          <li>진행 결과는 판매 · 정산 데이터로 정직하게 보고</li>
+        </ul>
+        <a class="btn blue" href="#contact" data-type="브랜드 제휴" data-big>브랜드 제휴 문의 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv">Process</span>
+    <h2 class="sec rv">진행 과정</h2>
+    <p class="lead rv">문의부터 정산까지, 모든 단계를 문서로 남기고 투명하게 진행합니다.</p>
+    <div class="steps rv">
+      <div class="step"><h4>상담 · 방향 설계</h4><p>채널/브랜드 현황을 함께 보고 목표와 수익 모델을 설계합니다.</p></div>
+      <div class="step"><h4>계약 · 조건 확정</h4><p>수익 배분과 역할 범위를 서면으로 확정합니다. 구두 약속은 하지 않습니다.</p></div>
+      <div class="step"><h4>실행 · 제작</h4><p>콘텐츠 기획, 상품 소싱, 판매 페이지 제작, 캠페인 운영을 실행합니다.</p></div>
+      <div class="step"><h4>정산 · 리포트</h4><p>판매 데이터와 정산 내역을 정기 리포트로 공유하고 다음 단계를 잡습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="portal" id="portal">
+  <div class="wrap">
+    <span class="eyebrow rv">Partner Hub</span>
+    <h2 class="sec rv">이미 파트너이신가요?<br><span class="hl">브랜딩스파크 HUB</span>로 들어오세요</h2>
+    <p class="lead rv">브랜딩스파크가 직접 만든 커머스 플랫폼입니다. 셀러와 공급사는 각자의 포탈에서
+    상품·주문·정산을 실시간으로 관리할 수 있습니다.</p>
+    <div class="pgrid">
+      <a class="ticket rv" href="https://hub.bspark.co.kr/login/seller" target="_blank" rel="noopener">
+        <div class="tt"><b>셀러 포탈</b><span>🛍️</span></div>
+        <p>상품 탐색과 판매 연동, 주문 처리 현황, 정산 내역까지 — 판매에 필요한 모든 것을 한 화면에서.</p>
+        <span class="go">셀러 로그인 →</span>
+      </a>
+      <a class="ticket rv" href="https://hub.bspark.co.kr/login" target="_blank" rel="noopener">
+        <div class="tt"><b>공급사 포탈</b><span>🏭</span></div>
+        <p>상품 등록과 단가 관리, 발주 확인, 정산 명세까지 — 공급사 업무를 시스템으로 간편하게.</p>
+        <span class="go">공급사 로그인 →</span>
+      </a>
+    </div>
+    <p class="note rv">아직 계정이 없으신가요? 입점은 제조사·자사브랜드에 한해 심사 후 진행됩니다 — <a href="#contact">입점 문의하기</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="eyebrow rv">FAQ</span>
+    <h2 class="sec rv">자주 묻는 질문</h2>
+    <div class="faq rv">
+      <details class="qa"><summary>구독자가 적어도 지원할 수 있나요?<span class="pm">+</span></summary><div class="ans">네. 구독자 수 기준을 두지 않습니다. 콘텐츠의 방향성과 꾸준함, 커머스와의 결합 가능성을 봅니다. 초기 채널일수록 커머스 설계를 처음부터 함께 잡을 수 있어 오히려 유리한 부분도 있습니다.</div></details>
+      <details class="qa"><summary>비용을 내야 하나요?<span class="pm">+</span></summary><div class="ans">가입비·교육비 같은 선불 비용은 받지 않습니다. 수익이 발생했을 때 사전에 서면으로 합의한 비율로 나누는 구조입니다.</div></details>
+      <details class="qa"><summary>정산은 어떻게 이루어지나요?<span class="pm">+</span></summary><div class="ans">자체 정산 시스템에서 판매 내역과 정산 명세를 확인할 수 있습니다. 1원 단위 대사가 원칙이며, 오차가 발견되면 원인을 추적해 바로잡는 것이 회사 규정입니다.</div></details>
+      <details class="qa"><summary>전속 계약을 해야 하나요?<span class="pm">+</span></summary><div class="ans">불공정한 장기 전속 계약은 하지 않습니다. 협업 범위와 기간, 수익 배분은 계약 전에 전부 서면으로 확정하고, 구두 약속으로 진행하는 일은 없습니다.</div></details>
+      <details class="qa"><summary>브랜드인데 어떤 식으로 진행되나요?<span class="pm">+</span></summary><div class="ans">브랜드 결에 맞는 크리에이터를 매칭해 캠페인을 기획하고, 협찬·콘텐츠 광고를 공동구매나 입점 판매로 연결합니다. 결과는 노출 수치가 아니라 판매·정산 데이터로 보고드립니다.</div></details>
+      <details class="qa"><summary>플랫폼 입점은 누구나 가능한가요?<span class="pm">+</span></summary><div class="ans">제조사와 자사브랜드 보유 기업에 한해 심사 후 입점을 진행합니다. 중간 유통(벤더) 입점은 받지 않습니다. 마진 구조를 깨끗하게 유지하기 위한 원칙입니다.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="info">
+      <span class="eyebrow rv">Contact</span>
+      <h2 class="sec rv">시작해 <span class="hl">볼까요?</span></h2>
+      <p class="lead rv">크리에이터 지원, 브랜드 제휴, 입점 문의 모두 환영합니다.
+      영업일 기준 24시간 내에 답변드립니다.</p>
+      <div class="cline rv">
+        <div><b>Email</b> info@bspark.co.kr</div>
+        <div><b>Tel</b> 010-8660-3293</div>
+        <div><b>Fax</b> 02-3477-3293</div>
+        <div><b>Office</b> 서울특별시 서초구 방배로60, 3층</div>
+      </div>
+    </div>
+    <form class="form rv" id="cform">
+      <h3>문의하기 ⚡</h3>
+      <div class="frow">
+        <div class="fg"><label>이름 / 채널명 · 회사명 *</label><input name="name" required placeholder="홍길동 / 채널명"></div>
+        <div class="fg"><label>연락처 *</label><input name="phone" required placeholder="010-0000-0000"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>이메일 *</label><input type="email" name="email" required placeholder="you@example.com"></div>
+        <div class="fg"><label>문의 유형 *</label>
+          <select name="type" id="ftype" required>
+            <option value="">선택해 주세요</option>
+            <option>크리에이터 지원</option>
+            <option>브랜드 제휴</option>
+            <option>플랫폼 입점 (제조사·자사브랜드)</option>
+            <option>기타</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>문의 내용 *</label><textarea name="message" required placeholder="채널 링크나 브랜드 소개와 함께 편하게 남겨주세요."></textarea></div>
+      <label class="agree"><input type="checkbox" id="fagree" required><span><a onclick="openPP(event)">개인정보 수집·이용</a>에 동의합니다. (문의 응대 목적, 목적 달성 시 파기)</span></label>
+      <button class="btn pri" type="submit" id="fbtn">문의 보내기 →</button>
+      <p class="fmsg" id="fmsg"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <img src="images/logo-white.png" alt="브랜딩스파크">
+      <div class="links">
+        <a href="#about">회사소개</a>
+        <a href="#business">사업영역</a>
+        <a href="https://hub.bspark.co.kr/login/seller" target="_blank" rel="noopener">셀러 포탈</a>
+        <a href="https://hub.bspark.co.kr/login" target="_blank" rel="noopener">공급사 포탈</a>
+        <a href="#contact">문의</a>
+        <a href="#" onclick="openPP(event)">개인정보처리방침</a>
+      </div>
+    </div>
+    <p>브랜딩스파크 주식회사 · 대표이사 한상지 · 사업자등록번호 837-86-03742<br>
+    서울특별시 서초구 방배로60, 3층 · info@bspark.co.kr · Tel 010-8660-3293 · Fax 02-3477-3293<br>
+    © 2026 BRANDINGSPARK Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="modal" id="ppModal">
+  <div class="box">
+    <h3>개인정보처리방침</h3>
+    <p>브랜딩스파크 주식회사(이하 "회사")는 문의 접수 및 응대를 위해 아래와 같이 개인정보를 수집·이용합니다.</p>
+    <h4>1. 수집 항목</h4><p>이름(또는 채널명·회사명), 연락처, 이메일, 문의 내용</p>
+    <h4>2. 수집 목적</h4><p>문의 응대, 제휴·지원 검토 및 결과 안내</p>
+    <h4>3. 보유 및 이용 기간</h4><p>목적 달성 후 지체 없이 파기합니다. 단, 관계 법령에 따라 보존이 필요한 경우 해당 기간 동안 보관합니다.</p>
+    <h4>4. 동의 거부 권리</h4><p>동의를 거부하실 수 있으며, 이 경우 문의 접수가 제한될 수 있습니다.</p>
+    <h4>5. 개인정보 보호책임자</h4><p>브랜딩스파크 담당자 · info@bspark.co.kr · 010-8660-3293</p>
+    <button class="btn pri close" onclick="closePP()">닫기</button>
+  </div>
+</div>
+
+<div id="prog"></div>
+<button id="totop" aria-label="맨 위로">⚡</button>
+
+<script>
+const CONFIG = { email: 'info@bspark.co.kr', web3formsKey: '' };
+
+// scroll progress + back-to-top
+const prog = document.getElementById('prog'), totop = document.getElementById('totop');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  prog.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  totop.classList.toggle('on', h.scrollTop > 600);
+});
+totop.onclick = () => scrollTo({top:0, behavior:'smooth'});
+
+// click spark burst
+addEventListener('click', e => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  for (let i = 0; i < 6; i++) {
+    const s = document.createElement('span');
+    s.className = 'spark'; s.textContent = '⚡';
+    const a = Math.random() * Math.PI * 2, d = 40 + Math.random() * 50;
+    s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+    s.style.setProperty('--dx', Math.cos(a) * d + 'px');
+    s.style.setProperty('--dy', Math.sin(a) * d + 'px');
+    s.style.setProperty('--rot', (Math.random() * 180 - 90) + 'deg');
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 700);
+  }
+});
+
+// marquee content
+const words = ['BRANDINGSPARK','⚡','CREATOR × COMMERCE','⚡','콘텐츠가 매출이 되는 곳','⚡','MCN','⚡','투명한 정산','⚡'];
+const fill = id => { const el = document.getElementById(id); el.innerHTML = (words.map(w=>`<span>${w}</span>`).join('')).repeat(4); };
+fill('mq1'); fill('mq2');
+
+// rotating word
+const flip = document.getElementById('flip');
+if (flip) { const ws = [...flip.children]; let i = 0;
+  setInterval(() => { ws[i].classList.remove('on'); i = (i+1)%ws.length; ws[i].classList.add('on'); }, 2200); }
+
+// custom cursor
+const cur = document.getElementById('cur');
+addEventListener('mousemove', e => { cur.style.left = e.clientX+'px'; cur.style.top = e.clientY+'px'; });
+document.querySelectorAll('a,button,[data-big]').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.classList.add('big'));
+  el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+});
+
+// nav
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 40));
+const menu = document.getElementById('menu');
+document.getElementById('burger').onclick = () => menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a => a.onclick = () => menu.classList.remove('open'));
+
+// reveal
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), {threshold:.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// preselect type
+document.querySelectorAll('[data-type]').forEach(a => a.addEventListener('click', () => { document.getElementById('ftype').value = a.dataset.type; }));
+
+// privacy modal
+const pp = document.getElementById('ppModal');
+function openPP(e){ if(e) e.preventDefault(); pp.classList.add('on'); }
+function closePP(){ pp.classList.remove('on'); }
+pp.addEventListener('click', e => { if(e.target === pp) closePP(); });
+
+// form
+document.getElementById('cform').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, btn = document.getElementById('fbtn'), msg = document.getElementById('fmsg');
+  const d = Object.fromEntries(new FormData(f));
+  if (CONFIG.web3formsKey) {
+    btn.disabled = true; btn.textContent = '전송 중...';
+    try {
+      const r = await fetch('https://api.web3forms.com/submit', {method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({access_key: CONFIG.web3formsKey, subject:`[홈페이지 문의] ${d.type} - ${d.name}`, ...d})});
+      if (!(await r.json()).success) throw 0;
+      msg.style.color = '#1a9b50'; msg.textContent = '문의가 접수되었습니다. 영업일 기준 24시간 내 답변드리겠습니다.';
+      msg.style.display = 'block'; f.reset();
+    } catch {
+      msg.style.color = '#d33'; msg.textContent = '전송에 실패했습니다. ' + CONFIG.email + ' 로 직접 메일 부탁드립니다.';
+      msg.style.display = 'block';
+    }
+    btn.disabled = false; btn.textContent = '문의 보내기 →';
+  } else {
+    const body = `문의 유형: ${d.type}%0D%0A이름/채널명: ${d.name}%0D%0A연락처: ${d.phone}%0D%0A이메일: ${d.email}%0D%0A%0D%0A${encodeURIComponent(d.message)}`;
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent('[홈페이지 문의] '+d.type+' - '+d.name)}&body=${body}`;
+  }
+});
+</script>
+</body>
+</html>

@@ -416,3 +416,17 @@ body.dark-top nav:not(.on) .burger span{background:#fff}
 .filelist button{font-family:inherit;font-size:12px;font-weight:700;color:#d33;background:none;border:0;cursor:pointer;text-decoration:underline}
 .filelist small{color:var(--sub)}
 [hidden]{display:none!important}
+
+/* footer: mobile 2-column, compact */
+@media(max-width:980px){
+  footer .grid{grid-template-columns:1fr 1fr;gap:28px 20px;padding:36px 0 26px}
+  footer .grid>div:first-child{grid-column:1/-1}
+  footer .grid>div:last-child{grid-column:1/-1}
+  footer ul{gap:7px}
+  footer h5{margin-bottom:10px}
+}
+@media(max-width:560px){
+  footer .grid{grid-template-columns:1fr 1fr;gap:24px 16px;padding:30px 0 22px}
+  footer .grid>div:first-child,footer .grid>div:last-child{grid-column:1/-1}
+  footer .legal{font-size:11.5px;line-height:1.8}
+}

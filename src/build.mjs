@@ -5,7 +5,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const P = (f) => readFileSync(join(root, "src", "partials", f), "utf8");
+const P = (f) => readFileSync(join(root, "src", "partials", f), "utf8").replace(/^\uFEFF/, "");
 const head = P("head.html"), nav = P("nav.html"), footer = P("footer.html"), scripts = P("scripts.html"), icons = P("icons.html");
 
 const SITE = "https://bspark.co.kr";
@@ -13,7 +13,7 @@ const pages = readdirSync(join(root, "src", "pages")).filter((f) => f.endsWith("
 const urls = [];
 
 for (const file of pages) {
-  const raw = readFileSync(join(root, "src", "pages", file), "utf8");
+  const raw = readFileSync(join(root, "src", "pages", file), "utf8").replace(/^\uFEFF/, "");
   // 첫 줄들의 <!-- key: value --> 를 메타로 사용
   const meta = {};
   const body = raw.replace(/^(?:<!--\s*(\w+):\s*(.*?)\s*-->\r?\n)+/, (block) => {

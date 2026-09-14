@@ -439,3 +439,19 @@ body.dark-top nav:not(.on) .burger span{background:#fff}
 .filmbox .snd .ic{width:16px;height:16px}
 .filmtxt p.lead{max-width:520px}
 @media(max-width:980px){.film{grid-template-columns:1fr;gap:36px}.filmbox{transform:none;max-width:520px}}
+
+/* legal page (privacy) */
+.legalbox{max-width:860px;border:2px solid var(--ink);border-radius:var(--r-lg);background:#fff;padding:44px 46px;box-shadow:8px 8px 0 var(--ink)}
+.legalbox h3{font-size:17px;font-weight:900;margin:34px 0 10px;letter-spacing:-.01em}
+.legalbox h3:first-of-type{margin-top:0}
+.legalbox p,.legalbox li{font-size:14.5px;color:var(--ink-2);line-height:1.75}
+.legalbox p{margin:0 0 8px}
+.legalbox ul,.legalbox ol{padding-left:20px;margin:6px 0 10px}
+.legalbox li{margin:3px 0}
+.legalbox .meta{font-size:12.5px;color:var(--sub);margin-bottom:10px}
+.legalbox .note{font-size:13px;color:var(--sub);background:var(--paper);border:1.5px dashed #c9cbd6;border-radius:10px;padding:10px 14px}
+.legalbox table{width:100%;border-collapse:collapse;margin:8px 0 12px;font-size:14px}
+.legalbox th,.legalbox td{border:1.5px solid #e3e5ee;padding:9px 12px;text-align:left;vertical-align:top}
+.legalbox th{background:var(--paper);font-weight:800;white-space:nowrap}
+.legalbox a{color:var(--blue);text-decoration:underline}
+@media(max-width:560px){.legalbox{padding:26px 20px}}

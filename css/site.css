@@ -316,6 +316,9 @@ footer h5{color:#fff;font-size:12.5px;letter-spacing:.12em;text-transform:upperc
 footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 footer ul a{color:#c9cdde;font-weight:600}
 footer ul a:hover{color:var(--volt)}
+footer .fsel{width:100%;max-width:230px;height:44px;padding:0 38px 0 14px;border:1.5px solid #ffffff44;border-radius:10px;background:#ffffff0d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e8ff3a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center/16px;color:#fff;font:inherit;font-weight:700;font-size:13.5px;appearance:none;-webkit-appearance:none;cursor:pointer}
+footer .fsel:hover,footer .fsel:focus{border-color:var(--volt);outline:0}
+footer .fsel option{color:var(--ink);background:#fff}
 footer .legal{border-top:1px solid #ffffff18;padding-top:20px;line-height:1.9;font-size:12.5px}
 footer .legal a{text-decoration:underline}
 

@@ -31,6 +31,8 @@ const onScroll = () => {
   totop.classList.toggle('on', h.scrollTop > 600);
   askfab.classList.toggle('up', h.scrollTop > 600);
 };
+const fsel = document.getElementById('familysite');
+if (fsel) fsel.addEventListener('change', () => { if (fsel.value) window.open(fsel.value, '_blank', 'noopener'); fsel.selectedIndex = 0; });
 const askfab = document.getElementById('askfab');
 if (/contact(\.html)?$/.test(location.pathname)) askfab.hidden = true;
 addEventListener('scroll', onScroll); onScroll();

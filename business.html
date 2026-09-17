@@ -184,11 +184,17 @@
       </div>
       <div>
         <h5>Company</h5>
-        <ul><li><a href="about.html">회사소개</a></li><li><a href="business.html">사업영역</a></li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="contact.html">문의</a></li><li><a href="https://blog.naver.com/aut00001" target="_blank" rel="noopener">블로그</a></li></ul>
+        <ul><li><a href="about.html">회사소개</a></li><li><a href="business.html">사업영역</a></li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="creators.html">크리에이터 지원</a></li><li><a href="brands.html">브랜드 제휴</a></li><li><a href="contact.html">문의</a></li><li><a href="https://blog.naver.com/aut00001" target="_blank" rel="noopener">블로그</a></li></ul>
       </div>
       <div>
-        <h5>Partner Hub</h5>
-        <ul><li><a href="https://hub.bspark.co.kr/platform" target="_blank" rel="noopener">브랜딩스파크 플랫폼</a></li><li><a href="https://hub.bspark.co.kr/login/seller" target="_blank" rel="noopener">셀러 포탈</a></li><li><a href="https://hub.bspark.co.kr/login" target="_blank" rel="noopener">공급사 포탈</a></li><li><a href="creators.html">크리에이터 지원</a></li><li><a href="brands.html">브랜드 제휴</a></li></ul>
+        <h5>패밀리 사이트</h5>
+        <select id="familysite" class="fsel" aria-label="패밀리 사이트">
+          <option value="" selected disabled>패밀리 사이트</option>
+          <option value="https://bspark.co.kr">브랜딩스파크 홈페이지</option>
+          <option value="https://hub.bspark.co.kr/platform">브랜딩스파크 플랫폼</option>
+          <option value="https://hub.bspark.co.kr/login">공급사 포탈</option>
+          <option value="https://hub.bspark.co.kr/login/seller">셀러 포탈</option>
+        </select>
       </div>
       <div>
         <h5>Contact</h5>
@@ -251,6 +257,8 @@ const onScroll = () => {
   totop.classList.toggle('on', h.scrollTop > 600);
   askfab.classList.toggle('up', h.scrollTop > 600);
 };
+const fsel = document.getElementById('familysite');
+if (fsel) fsel.addEventListener('change', () => { if (fsel.value) window.open(fsel.value, '_blank', 'noopener'); fsel.selectedIndex = 0; });
 const askfab = document.getElementById('askfab');
 if (/contact(\.html)?$/.test(location.pathname)) askfab.hidden = true;
 addEventListener('scroll', onScroll); onScroll();

@@ -191,6 +191,7 @@
   </div>
 </div>
 
+<a id="askfab" href="contact.html" aria-label="문의하기"><svg class="ic"><use href="#i-chat"/></svg><span>문의하기</span></a>
 <button id="totop" aria-label="맨 위로"><svg class="ic"><use href="#i-up"/></svg></button>
 <script>
 const CONFIG = { email: 'info@bspark.co.kr', web3formsKey: '' };
@@ -223,7 +224,10 @@ const onScroll = () => {
   nav.classList.toggle('on', h.scrollTop > 40);
   prog.style.width = (h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight) * 100) + '%';
   totop.classList.toggle('on', h.scrollTop > 600);
+  askfab.classList.toggle('up', h.scrollTop > 600);
 };
+const askfab = document.getElementById('askfab');
+if (/contact(\.html)?$/.test(location.pathname)) askfab.hidden = true;
 addEventListener('scroll', onScroll); onScroll();
 totop.onclick = () => scrollTo({top:0, behavior:'smooth'});
 const menu = document.getElementById('menu');
